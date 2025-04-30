@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Mount Everest",
+    "location": "Nepal/China",
+    "elevation_m": 8848,
+    "temperature_c": -19,
+    "price_usd": 40000
+  },
+  {
+    "name": "K2",
+    "location": "Pakistan/China",
+    "elevation_m": 8611,
+    "temperature_c": -20,
+    "price_usd": 30000
+  },
+  {
+    "name": "Kangchenjunga",
+    "location": "Nepal/India",
+    "elevation_m": 8586,
+    "temperature_c": -18,
+    "price_usd": 25000
+  },
+  {
+    "name": "Lhotse",
+    "location": "Nepal/China",
+    "elevation_m": 8516,
+    "temperature_c": -17,
+    "price_usd": 27000
+  },
+  {
+    "name": "Makalu",
+    "location": "Nepal/China",
+    "elevation_m": 8485,
+    "temperature_c": -16,
+    "price_usd": 26000
+  },
+  {
+    "name": "Mount Kilimanjaro",
+    "location": "Tanzania",
+    "elevation_m": 5895,
+    "temperature_c": 0,
+    "price_usd": 1500
+  },
+  {
+    "name": "Mount Elbrus",
+    "location": "Russia",
+    "elevation_m": 5642,
+    "temperature_c": -10,
+    "price_usd": 1200
+  },
+  {
+    "name": "Mount Denali",
+    "location": "USA",
+    "elevation_m": 6190,
+    "temperature_c": -15,
+    "price_usd": 3000
+  },
+  {
+    "name": "Mount Fuji",
+    "location": "Japan",
+    "elevation_m": 3776,
+    "temperature_c": 5,
+    "price_usd": 100
+  },
+  {
+    "name": "Matterhorn",
+    "location": "Switzerland/Italy",
+    "elevation_m": 4478,
+    "temperature_c": -5,
+    "price_usd": 2000
+  }
+]
