@@ -134,10 +134,11 @@ header .search-bar .menu-icon {
   z-index: 100;
 }
 
-.sticky-header .cell {
+.mountain-data .cell {
   flex: 1;
   text-align: left;
-}
+  font-size: 16px;
+  }
 
 .mountain-data .cell.# {
   background: none;
@@ -163,12 +164,6 @@ header .search-bar .menu-icon {
   align-items: center;
   padding: 12px 20px;
   border-bottom: 1px solid #eee;
-}
-
-.mountain-data .cell {
-  flex: 1;
-  text-align: center;
-  font-size: 16px;
 }
 
 .mountain-data .cell.tiket {
