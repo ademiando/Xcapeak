@@ -139,26 +139,18 @@ header .search-bar .menu-icon {
   text-align: center;
 }
 
-/* Mountain Data Section */
-.mountain-data .row {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-}
-
 .mountain-data .cell {
   flex: 1;
   text-align: center;
-  font-size: 8px;
+  font-size: 14px;
 }
 
 .mountain-data .cell.# {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: #f4c542; /* Warna bintang */
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #f4c542; /* Warna bintang */
 }
 
 .mountain-data .cell.# {
@@ -169,6 +161,14 @@ header .search-bar .menu-icon {
 
 .cell .#.active {
     color: #ffcc00; /* Warna bintang jika aktif */
+}
+
+/* Mountain Data Section */
+.mountain-data .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .mountain-data .cell.tiket {
