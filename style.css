@@ -153,7 +153,7 @@ header .search-bar .menu-icon {
   font-size: 14px;
 }
 
-.cell .favorite-button {
+.mountain-data .cell.favorite-button {
     background: none;
     border: none;
     font-size: 18px;
@@ -161,7 +161,7 @@ header .search-bar .menu-icon {
     color: #f4c542; /* Warna bintang */
 }
 
-.cell .mountain-number {
+.mountain-data .cell.mountain-number {
     font-weight: bold;
     color: #333;
     margin-right: 10px;
