@@ -1,73 +1,149 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Xcapeak</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
-    <div class="logo">Xcapeak</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search...">
-      <button class="login-button">Log In</button>
-      <div class="menu-icon">☰</div>
-    </div>
-  </header>
 
-  <div class="display-ads">Display Ads (hello@xcapeak.com)</div>
-
-  <div class="tagline">Your Gateway to Global Mountain Trails</div>
-  <div class="sub-tagline">
-    Discover, Connect, Conquer Hiking Trails Worldwide with the Most Comprehensive Adventure Platform
+<header>
+  <div class="logo">Xcapeak</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button class="login-button">Log In</button>
+    <div class="menu-icon">☰</div>
   </div>
+</header>
 
-  <div class="mountain-list">
-    <!-- Gunung Everest -->
-    <div class="row" data-id="1">
-      <div class="cell tiket">
-        <img src="everest.jpg" alt="Everest">
-        <div class="mountain-info">
-          <strong>1. Everest</strong>
-          <small>$8000</small>
-        </div>
-      </div>
-      <div class="cell">
-        <button class="favorite-button">⭐</button>
-      </div>
-    </div>
+<div class="display-ads">Display Ads (hello@xcapeak.com)</div>
 
-    <!-- Gunung Fuji -->
-    <div class="row" data-id="2">
-      <div class="cell tiket">
-        <img src="fuji.jpg" alt="Fuji">
-        <div class="mountain-info">
-          <strong>2. Fuji</strong>
-          <small>$700</small>
-        </div>
-      </div>
-      <div class="cell">
-        <button class="favorite-button">⭐</button>
-      </div>
-    </div>
+<div class="tagline">Your Gateway to Global Mountain Trails</div>
+<div class="sub-tagline">Discover, Connect, Conquer Hiking Trails Worldwide with the Most Comprehensive Adventure Platform</div>
 
-    <!-- Gunung Kilimanjaro -->
-    <div class="row" data-id="3">
-      <div class="cell tiket">
-        <img src="kilimanjaro.jpg" alt="Kilimanjaro">
-        <div class="mountain-info">
-          <strong>3. Kilimanjaro</strong>
-          <small>$700</small>
-        </div>
-      </div>
-      <div class="cell">
-        <button class="favorite-button">⭐</button>
-      </div>
+<nav class="tabs">
+  <a href="#">Mountain</a>
+  <a href="#">Favorite</a>
+  <a href="#">Community</a>
+  <a href="#">News</a>
+  <a href="#">Gear</a>
+</nav>
+
+<div class="filters">
+  <select>
+    <option>USD $</option>
+    <option>BTC ₿</option> <!-- Bitcoin -->
+    <option>IDR Rp</option> <!-- Indonesia -->
+    <option>NPR Rs</option> <!-- Nepal -->
+    <option>CNY ¥</option> <!-- China -->
+    <option>JPY ¥</option> <!-- Jepang -->
+    <option>TZS Sh</option> <!-- Tanzania -->
+    <option>RUB ₽</option> <!-- Rusia -->
+    <option>ARS $</option> <!-- Argentina -->
+    <option>AUD $</option> <!-- Australia -->
+    <option>PHP ₱</option> <!-- Filipina -->
+    <option>PGK K</option> <!-- Papua New Guinea -->
+    <option>ZAR R</option> <!-- South Africa -->
+    <option>MAD د.م.</option> <!-- Morocco -->
+    <option>IRR ﷼</option> <!-- Iran -->
+    <option>EUR €</option> <!-- Portugal -->
+    <option>TRY ₺</option> <!-- Turkey -->
+    <option>NZD $</option> <!-- New Zealand -->
+    <option>XCD $</option> <!-- Antarctica uses international currencies -->
+  </select>
+  <select>
+    <option>Global</option>
+    <option>Indonesia</option>
+    <option>India</option>
+    <option>Nepal</option>
+    <option>China</option>
+    <option>Jepang</option>
+    <option>Tanzania</option>
+    <option>Rusia</option>
+    <option>Argentina</option>
+    <option>Amerika</option>
+    <option>Australia</option>
+    <option>Filipina</option>
+    <option>Papua New Guinea</option>
+    <option>South Africa</option>
+    <option>Morocco</option>
+    <option>Iran</option>
+    <option>Portugal</option>
+    <option>Turkey</option>
+    <option>New Zealand</option>
+    <option>Antarctica</option>
+  </select>
+  <select>
+    <option>#Top Global</option>
+    <option>Top 7 Summit</option>
+    <option>Trending🔥</option>
+    <option>Most Visited</option>
+    <option>Volcano</option>
+    <option>Himalaya's</option>
+    <option>Hidden Gems</option> <!-- Jalur pendakian tersembunyi yang jarang diketahui -->
+    <option>Green Savanna</option> <!-- Jalur dengan pemandangan padang savana hijau -->
+    <option>Snowy Trails</option> <!-- Jalur pendakian di wilayah bersalju -->
+    <option>Family-Friendly</option> <!-- Jalur yang ramah untuk keluarga -->
+    <option>Eco-Tourism</option> <!-- Jalur yang mendukung pariwisata ramah lingkungan -->
+    <option>Adventure Trails</option> <!-- Jalur penuh tantangan untuk pendaki berpengalaman -->
+    <option>Desert Trails</option> <!-- Jalur pendakian di wilayah gurun -->
+    <option>Longest Trails</option> <!-- Jalur pendakian terpanjang di dunia -->
+    <option>Cultural Routes</option> <!-- Jalur dengan keunikan budaya atau sejarah -->
+    <option>Tropical Trails</option> <!-- Jalur pendakian di wilayah tropis -->
+    <option>Altitude Challenges</option> <!-- Jalur dengan ketinggian ekstrem -->
+    <option>Night Trails</option> <!-- Jalur untuk pendakian malam hari -->
+    <option>National Parks</option> <!-- Jalur di taman nasional terkenal -->
+    <option>Beachside Trails</option> <!-- Jalur dekat pantai dengan pemandangan laut -->
+    <option>Rocky Mountains</option> <!-- Jalur di pegunungan berbatu -->
+  </select>
+</div>
+
+<div class="sticky-header">
+  <div class="cell">No.</div>
+  <div class="cell">Cost</div>
+  <div class="cell">Status</div>
+  <div class="cell">Region</div>
+  <div class="cell">Altitude</div>
+  <div class="cell">Temperature</div>
+  <div class="cell">Quota/Left</div>
+</div>
+
+<!-- List of Mountains -->
+<div class="row">
+  <div class="cell">1</div>
+  <div class="cell tiket">
+    <img src="everest.jpg" alt="Everest">
+    <div class="mountain-info">
+      <strong>Everest</strong>
+      <small>$8000</small>
     </div>
   </div>
+  <div class="cell"><span class="status-dot dot-open"></span> <span class="green">Open</span></div>
+  <div class="cell">Nepal / China</div>
+  <div class="cell">8848 meters</div>
+  <div class="cell">-45ºC <br> 🌤 Sunny</div>
+  <div class="cell"><span class="green">300</span> / <span class="red">10</span></div>
+</div>
 
-  <script src="scripts.js"></script>
+<div class="row">
+  <div class="cell">2</div>
+  <div class="cell tiket">
+    <img src="fuji.jpg" alt="Fuji">
+    <div class="mountain-info">
+      <strong>Fuji</strong>
+      <small>$700</small>
+    </div>
+  </div>
+  <div class="cell"><span class="status-dot dot-open"></span> <span class="green">Open</span></div>
+  <div class="cell">Japan</div>
+  <div class="cell">3776 meters</div>
+  <div class="cell">-5ºC <br> ☁️ Cloudy</div>
+  <div class="cell"><span class="green">500</span> / <span class="red">45</span></div>
+</div>
+
+<!-- Repeat numbering for all other mountains -->
+
+<script src="script.js"></script>
 </body>
 </html>
