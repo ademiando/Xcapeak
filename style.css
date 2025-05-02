@@ -1,147 +1,207 @@
+/* Global Styles */
 body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
+/* Header Section */
 header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: #f4f4f4;
-      border-bottom: 1px solid #ddd;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
 
-logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: silver;
-      text-shadow: 1px 1px 3px #000;
-    }
+header .logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: silver;
+  text-shadow: 1px 1px 3px #000;
+}
 
-search-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+header .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-search-bar input {
-      width: 300px;
-      padding: 5px;
-    }
+header .search-bar input {
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 
-menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-    }
+header .search-bar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-display-ads {
-      width: 100%;
-      height: 65px;
-      background-color: blue;
-      text-align: center;
-      line-height: 50px;
-      font-size: 18px;
-      color: white;
-      font-weight: bold;
-    }
+header .search-bar .menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
 
-tagline {
-      text-align: center;
-      margin-left: 20px;
-      margin: 10px 0;
-      font-size: 20px;
-      font-style: italic;
-    }
+/* Ads Section */
+.display-ads {
+  width: 100%;
+  height: 65px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  line-height: 65px;
+  font-size: 18px;
+  font-weight: bold;
+}
 
-sub-tagline {
-      text-align: center;
-      margin: 6px 0;
-      font-size: 16px;
-      font-style: italic;
-    }
+/* Tagline Section */
+.taglines {
+  text-align: center;
+  padding: 20px 10px;
+}
 
-tabs {
-      display: flex;
-      justify-content: flex-start;
-      transform: translateX(20px);
-      gap: 20px;
-      padding: 10px 0;
-      background-color: #f9f9f9;
-      border-bottom: 1px solid #ddd;
-    }
+.taglines .tagline {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
 
-tabs a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
+.taglines .sub-tagline {
+  font-size: 16px;
+  font-style: italic;
+  color: #555;
+}
 
-filters {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 10px 20px;
-    }
+/* Navigation Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
 
-filters select, .filters button {
-      padding: 5px 10px;
-    }
+.tabs a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
 
-sticky-header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      display: flex;
-      font-weight: bold;
-      padding: 12px 20px;
-      border-bottom: 2px solid #ccc;
-      z-index: 100;
-    }
+.tabs a:hover {
+  background-color: #007bff;
+  color: white;
+}
 
-row {
-      display: flex;
-      align-items: center;
-      padding: 12px 20px;
-      border-bottom: 1px solid #eee;
-    }
+/* Filters Section */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+}
 
-cell {
-      flex: 1;
-      text-align: center;
-      font-size: 14px;
-    }
+.filters select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-cell.tiket {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-align: left;
-    }
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  display: flex;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-bottom: 2px solid #ccc;
+  z-index: 100;
+}
 
-cell img {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
+.sticky-header .cell {
+  flex: 1;
+  text-align: center;
+}
 
-mountain-info {
-      display: flex;
-      flex-direction: column;
-    }
+/* Mountain Data Section */
+.mountain-data .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+}
 
-green { color: green; }
-red { color: red; }
+.mountain-data .cell {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+}
 
-status-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-right: 5px;
-    }
+.mountain-data .cell.tiket {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
 
-dot-open { background-color: green; }
-dot-closed { background-color: red; }
+.mountain-data .cell img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.mountain-data .cell .mountain-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mountain-data .cell .green {
+  color: green;
+}
+
+.mountain-data .cell .red {
+  color: red;
+}
+
+.mountain-data .status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.mountain-data .dot-open {
+  background-color: green;
+}
+
+.mountain-data .dot-closed {
+  background-color: red;
+}
+
+/* Footer (Optional) */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #555;
+}
