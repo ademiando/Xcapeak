@@ -1,115 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gunung info tracker seperti coinmarketcap versi pegunungan. Temukan informasi tentang gunung di seluruh dunia.">
-  <title>Xcapeak - Gunung Info Tracker</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Montamap - Top 10 Mountains</title>
+  <style>
+    :root {
+      --bg-light: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1950&q=80');
+      --bg-dark: url('https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1950&q=80');
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 80px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      transition: background-image 0.5s ease;
+      color: #111;
+    }
+
+    body.dark {
+      color: #f0f0f0;
+    }
+
+    .toggle-theme-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .tab-buttons {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 12px;
+    }
+
+    .tab-button {
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      font-size: 0.9rem;
+    }
+
+    .tab-button.active {
+      background-color: #f39c12;
+      color: black;
+    }
+
+    .mountain-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .mountain-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mountain-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .mountain-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.3s ease;
+    }
+
+    .mountain-card:hover .mountain-image {
+      filter: brightness(0.85);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+    }
+
+    .mountain-info {
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      color: white;
+      z-index: 2;
+    }
+
+    .mountain-name {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .mountain-details {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .status-open {
+      color: #8cffb3;
+    }
+
+    .status-closed {
+      color: #ff7f7f;
+    }
+
+    .favorite-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      font-size: 1.5rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      padding: 4px 10px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+    }
+
+    .favorite-btn.active {
+      color: gold;
+      background: white;
+    }
+
+    #loadMoreBtn {
+      margin-top: 24px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      background-color: #3742fa;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #loadMoreBtn:hover {
+      background-color: #2f35c7;
+    }
+  </style>
 </head>
 <body>
-
-      <script src="script.js"></script>
-</body>
-</html>
-
-  <!-- Header -->
-  <header>
-    <div class="logo">Xcapeak</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search...">
-      <button class="login-button">Log In</button>
-      <div class="menu-icon">☰</div>
-    </div>
-  </header>
-
-  <!-- Ads Section -->
-  <div class="display-ads">Display Ads (hello@xcapeak.com)</div>
-
-  <!-- Tagline Section -->
-  <section class="taglines">
-    <h1 class="tagline">Your Gateway to Global Mountain Trails</h1>
-    <p class="sub-tagline">Discover, Connect, Conquer Hiking Trails Worldwide with the Most Comprehensive Adventure Platform</p>
-  </section>
-
-  <!-- Navigation Tabs -->
-  <nav class="tabs">
-    <a href="#">Mountain</a>
-    <a href="#">Favorite</a>
-    <a href="#">Community</a>
-    <a href="#">News</a>
-    <a href="#">Gear</a>
-  </nav>
- 
-<!-- Tab Favorite Section -->
-<section id="favorite" class="favorite-data" style="display: none;">
-    <h2>Favorite Mountains</h2>
-    <div class="mountain-list">
-        <!-- Gunung favorit akan muncul di sini -->
-    </div>
-</section>
-  
-  <!-- Filters Section -->
-  <section class="filters">
-    <select>
-      <option>USD $</option>
-      <option>BTC ₿</option>
-      <option>IDR Rp</option>
-      <!-- Add more currencies here -->
-    </select>
-    <select>
-      <option>Global</option>
-      <option>Indonesia</option>
-      <option>India</option>
-      <!-- Add more regions here -->
-    </select>
-    <select>
-      <option>#Top Global</option>
-      <option>Top 7 Summit</option>
-      <option>Trending🔥</option>
-      <option>Most Visited</option>
-      <!-- Add more categories here -->
-    </select>
-  </section>
-
-  <!-- Sticky Header for Data -->
-  <div class="sticky-header">
-    <div class="cell">#</div>
-    <div class="cell">Cost</div>
-    <div class="cell">Status</div>
-    <div class="cell">Region</div>
-    <div class="cell">Altitude</div>
-    <div class="cell">Temperature</div>
-    <div class="cell">Quota/Left</div>
+  <div class="tab-buttons">
+    <button class="tab-button active" id="tabAll">All</button>
+    <button class="tab-button" id="tabFav">Favorites</button>
   </div>
 
-<section class="mountain-data">
-  <div class="cell #">
-    <button class="favorite-button">⭐</button> <!-- Tombol Bintang -->
-    <span class="mountain-number">1</span> <!-- Nomor Gunung -->
-  </div>
+  <button class="toggle-theme-btn" id="themeToggle">Switch to Dark Mode</button>
+  <div class="mountain-container" id="mountainContainer"></div>
+  <button id="loadMoreBtn">Load More Mountains</button>
 
+  <script>
+    const mountainData = [/* ...data gunung seperti di kode Anda... */];
 
-  <!-- Mountain Data Rows -->
-  <section class="mountain-data">
-    <div class="row">
-      <div class="cell tiket">
-        <img src="everest.jpg" alt="Everest">
-        <div class="mountain-info">
-          <strong>Everest</strong>
-          <small>$8000</small>
-        </div>
-        
-      </div>
-      <div class="cell"><span class="status-dot dot-open"></span> <span class="green">Open</span></div>
-      <div class="cell">Nepal / China</div>
-      <div class="cell">8848 meters</div>
-      <div class="cell">-45ºC <br> 🌤 Sunny</div>
-      <div class="cell"><span class="green">300</span> / <span class="red">10</span></div>
-      <div class="cell">
-    </div>
-    </div>
-    <!-- Add more rows here -->
-  </section>
+    let loaded = 0;
+    const batch = 4;
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    function renderMountains(showFavorites = false) {
+      const container = document.getElementById("mountainContainer");
+      container.innerHTML = "";
+      const dataToShow = showFavorites
+        ? mountainData.filter(m => favorites.includes(m.name))
+        : mountainData.slice(0, loaded);
+
+      dataToShow.forEach((m) => {
+        const card = document.createElement("div");
+        card.className = "mountain-card";
+        card.onclick = () => window.location.href = `https://montamap.com/${m.link}`;
+        card.innerHTML = `
+          <span class="favorite-btn ${favorites.includes(m.name) ? 'active' : ''}" data-name="${m.name}">★</span>
+          <img src="${m.image}" alt="${m.name}" class="mountain-image" />
+          <div class="gradient-overlay"></div>
+          <div class="mountain-info">
+            <div class="mountain-name">${m.name}</div>
+            <div class="mountain-details">
+              ${m.region}<br />
+              <span class="${m.status === 'Open' ? 'status-open' : 'status-closed'}">Status: ${m.status}</span><br />
+              Elevation: ${m.elevation}<br />
+              Weather: ${m.weather}
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+
+        card.querySelector(".favorite-btn").onclick = (e) => {
+          e.stopPropagation();
+          toggleFavorite(m.name);
+          renderMountains(showFavorites);
+        };
+      });
+
+      document.getElementById("loadMoreBtn").style.display = showFavorites || loaded >= mountainData.length ? "none" : "block";
+    }
+
+    function toggleFavorite(name) {
+      if (favorites.includes(name)) {
+        favorites = favorites.filter(n => n !== name);
+      } else {
+        favorites.push(name);
+      }
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+    document.getElementById("loadMoreBtn").addEventListener("click", () => {
+      loaded += batch;
+      renderMountains(false);
+    });
+
+    document.getElementById("tabAll").addEventListener("click", () => {
+      document.getElementById("tabAll").classList.add("active");
+      document.getElementById("tabFav").classList.remove("active");
+      renderMountains(false);
+    });
+
+    document.getElementById("tabFav").addEventListener("click", () => {
+      document.getElementById("tabAll").classList.remove("active");
+      document.getElementById("tabFav").classList.add("active");
+      renderMountains(true);
+    });
+
+    // Theme Toggle Logic
+    const toggleBtn = document.getElementById("themeToggle");
+    let isDarkMode = false;
+
+    function applyTheme(isDark) {
+      document.body.classList.toggle("dark", isDark);
+      document.body.style.backgroundImage = isDark
+        ? "var(--bg-dark)"
+        : "var(--bg-light)";
+      toggleBtn.textContent = isDark ? "Switch to Light Mode" : "Switch to Dark Mode";
+    }
+
+    applyTheme(isDarkMode);
+
+    toggleBtn.addEventListener("click", () => {
+      isDarkMode = !isDarkMode;
+      applyTheme(isDarkMode);
+    });
+
+    // Initial load
+    loaded = batch;
+    renderMountains(false);
+  </script>
 </body>
 </html>
